@@ -15,7 +15,7 @@ class _LoginViewState extends State<LoginView> {
 
   bool isLoading = false;
 
-  // -------- LOGIN FUNCTION ----------
+
   Future<void> login() async {
     setState(() => isLoading = true);
 
@@ -40,13 +40,12 @@ class _LoginViewState extends State<LoginView> {
       print("RES: ${response.data}");
 
       if (response.data["status"] == "success") {
-        // لو نجح
+   
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text("تم تسجيل الدخول بنجاح")));
 
-        // تنقل للصفحة الرئيسية
-        // Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
       } else {
         ScaffoldMessenger.of(
           context,
@@ -95,7 +94,7 @@ class _LoginViewState extends State<LoginView> {
 
               const SizedBox(height: 20),
 
-              // ---------------- PHONE FIELD ----------------
+             
               Row(
                 children: [
                   CountryCodePicker(
@@ -125,7 +124,7 @@ class _LoginViewState extends State<LoginView> {
 
               const SizedBox(height: 16),
 
-              // ---------------- PASSWORD FIELD ----------------
+           
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: TextFormField(
@@ -158,7 +157,6 @@ class _LoginViewState extends State<LoginView> {
 
               const SizedBox(height: 10),
 
-              // ---------------- LOGIN BUTTON ----------------
               SizedBox(
                 width: double.infinity,
                 child: Padding(
