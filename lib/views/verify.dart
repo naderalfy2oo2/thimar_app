@@ -57,13 +57,12 @@ class _VerifyViewState extends State<VerifyView> {
                 child: PinCodeTextField(
                   pinBoxRadius: BorderSide.strokeAlignInside,
                   pinTextStyle: TextStyle(color: Colors.black, fontSize: 18),
-                  //controller: TextEditingController(),
+                 
                   autofocus: true,
 
                   hideCharacter: false,
                   highlight: true,
 
-                  //defaultBorderColor: Colors.black,
                   hasTextBorderColor: Colors.green,
                   highlightPinBoxColor: Colors.white,
                 ),
