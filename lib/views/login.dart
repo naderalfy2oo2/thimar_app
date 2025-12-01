@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:thimar_app/views/home.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -14,7 +15,6 @@ class _LoginViewState extends State<LoginView> {
   final TextEditingController passwordController = TextEditingController();
 
   bool isLoading = false;
-
 
   Future<void> login() async {
     setState(() => isLoading = true);
@@ -40,12 +40,11 @@ class _LoginViewState extends State<LoginView> {
       print("RES: ${response.data}");
 
       if (response.data["status"] == "success") {
-   
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text("تم تسجيل الدخول بنجاح")));
 
-        Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HomeView()));
       } else {
         ScaffoldMessenger.of(
           context,
@@ -94,7 +93,6 @@ class _LoginViewState extends State<LoginView> {
 
               const SizedBox(height: 20),
 
-             
               Row(
                 children: [
                   CountryCodePicker(
@@ -124,7 +122,6 @@ class _LoginViewState extends State<LoginView> {
 
               const SizedBox(height: 16),
 
-           
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: TextFormField(
